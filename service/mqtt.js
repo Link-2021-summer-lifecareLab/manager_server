@@ -7,14 +7,10 @@ const mqttClient  = mqtt.connect({
 })
 
 
-// 디바이스/상태
-// plug, hue, door, pir, airmonitor
-
-const topicList = ['bulb/sensor_status', 'plug/sensor_status', 'door/sensor_status', 'motion/sensor_status', 'airmonitor/sensor_status']
 
 mqttClient.on('connect', function () {
   console.log('MQTT Connected!')
-  mqttClient.subscribe(topicList)
+  mqttClient.subscribe(config.TOPIC_LIST)
 })
 
 module.exports = mqttClient

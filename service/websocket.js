@@ -12,16 +12,13 @@ module.exports = (app) => {
         console.log('Websocket connected!')
         
         mqttClient.on('message', (topic, data)=>{
-            // console.log(JSON.parse(data))
             socket.emit(topic, JSON.parse(data))
         })
+
         socket.on('bulb/change', data=>{
-            console.log(data)
             mqttClient.publish('bulb/change', JSON.stringify(data))
         })
         socket.on('plug/change', data=>{
-            
-            console.log(data)
             mqttClient.publish('plug/change', JSON.stringify(data))
             
         })
