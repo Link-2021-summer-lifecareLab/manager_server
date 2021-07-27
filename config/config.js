@@ -1,5 +1,5 @@
 const config = {
-    SERVER_IP: 'http://localhost',
+    SERVER_IP: 'http://210.107.206.176',
     PORT: 3002,
     TOPIC_LIST: ['bulb/sensor_status', 'plug/sensor_status', 'door/sensor_status', 'motion/sensor_status', 'airmonitor/sensor_status'],
     MQTT_BROKER_IP: 'localhost',
